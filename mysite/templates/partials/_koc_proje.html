@@ -1,0 +1,54 @@
+<!-- Form -->
+{% load static %}
+<form method="post" action="{% url 'proje_details' projem.slug %}">
+    {% csrf_token %}
+    {% for field in form %}
+
+    <div class="form-group">
+
+        <div class="row mb-1">
+            <div class="col-2 text-center">
+                <label for="{{field.id_for_label}}">{{ field.label }}</label>
+            </div>
+            <div class="col-4 text-center">
+                <label for="modeller">Model Seçiniz</label>
+            </div>
+
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 mt-2">{{ field }}</div>
+            {% if field.errors %}
+            <ul>
+                {% for error in field.errors %}
+                <li style="color: red;">{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="col-4 mt-2">
+
+                <select class="form-select text-center" name="modeller">
+                    <option value="ARIMA" {% if selected == "ARIMA" %} selected {% endif %}>ARIMA</option>
+                    <option value="LSTM"  {% if selected == "LSTM" %} selected {% endif %}>LSTM</option>
+                </select>
+            </div>
+
+            <div class="col-2 ms-auto d-flex justify-content-end align-items-centers" data-bs-toggle="tooltip" data-bs-placement="top" title="Proje Kaynak Kodu">
+                <a href="https://github.com/uzcaliskan/Turkiye-Karbon-Emisyon-Tahminleme/blob/main/Carbon_Emission_Forecasting_Of_Turkiye_Final.ipynb" class="nav-link">
+                    <img src="{% static 'images/github-mark-white.png' %}" alt="Proje Kaynak Kodu"
+                         class="img-fluid bg-dark rounded-circle ms-auto" style="width: 40px; height: auto;">
+                </a>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row mt-3">
+        <div class="container">
+            {{ graph|safe }}
+        </div>
+    </div>
+    <div class="mt-2">
+        <button type="submit" class="btn btn-primary" id="sendButton">Tahminle</button>
+    </div>
+</form>

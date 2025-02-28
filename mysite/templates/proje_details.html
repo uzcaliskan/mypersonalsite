@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'mysite/css/projem.css' %}">
+
+{% endblock %}
+
+
+{% block title %} {{projem.title}} {% endblock %}
+
+{% block content %}
+
+<div class="container mt-2">
+    <div class="card">
+        <img src={{projem.image.url}} class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">{{ projem.title }}</h5>
+            <p class="card-text"> {{projem.description|safe}} </p>
+
+            {% include 'partials/_koc_proje.html' %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+<script>
+    // Sayfa yüklendiğinde varsayılan değeri ARIMA olarak ayarla
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdown = document.getElementById("modeller");
+        dropdown.value = "{{ request.GET.model|default:'ARIMA' }}"; // Varsayılan değer ARIMA
+    });
+
+</script>

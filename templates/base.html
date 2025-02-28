@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mysite/css/navbar.css' %}">
+
+    {% block css_files %} {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+
+</head>
+<body>
+
+{% include 'partials/_navbar.html' %}
+
+{% block content %} {% endblock %}
+
+
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+{% block js_files %} {% endblock %}
+</body>
+</html>

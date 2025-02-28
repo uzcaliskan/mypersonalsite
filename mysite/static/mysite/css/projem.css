@@ -1,0 +1,28 @@
+      /* Beyaz örtü efekti */
+.card-img-overlay {
+        background-color: rgba(255, 255, 255, 0.85); /* Yarı saydam beyaz */
+    }
+
+     /* İçerik için stil */
+        .card-body {
+            position: relative;
+            z-index: 2; /* Örtünün üstünde olsun */
+            text-align: center;
+            color: black; /* Yazı rengi siyah */
+            padding: 20px; /* İçerik ile kenarlar arasında boşluk */
+        }
+
+        /* Başlık stili */
+        .card-title {
+            font-size: 24px; /* Font boyutu */
+            font-weight: bold; /* Kalın yazı */
+             color: black;
+            margin-bottom: 10px; /* Alt boşluk */
+        }
+
+        /* Metin stili */
+        .card-text {
+            font-size: 16px; /* Font boyutu */
+            color: black;
+            line-height: 1.5; /* Satır aralığı */
+        }
