@@ -17,8 +17,6 @@ idna==3.10
 ipykernel==6.29.5
 isoduration==20.11.0
 joblib
-jupyter==1.1.1
-jupyterlab==4.3.5
 keras==3.8.0
 libclang==18.1.1
 Markdown==3.7
@@ -30,7 +28,6 @@ mkl_fft
 mkl_random
 ml-dtypes==0.4.1
 namex==0.0.8
-notebook==7.3.2
 numexpr
 numpy
 opt_einsum==3.4.0
@@ -60,8 +57,7 @@ statsmodels==0.14.4
 tenacity
 tensorboard==2.18.0
 tensorboard-data-server==0.7.2
-tensorflow==2.18.0
-tensorflow_intel==2.18.0
+
 termcolor==2.5.0
 threadpoolctl
 typing_extensions==4.12.2
